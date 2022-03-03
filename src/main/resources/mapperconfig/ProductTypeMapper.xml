@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<!--namespace值为dao下的接口UserDao-->
+<mapper namespace="com.hutao.mapper.ProductTypeMapper" >
+    <!--id的值为 ProductTypeMapper 接口中的 getProductList 方法的名称，resultType为 ProductType 方法的返回类型-->
+    <select id="getProductList" resultType="com.hutao.pojo.ProductType">
+        select  * from producttype
+    </select>
+
+    <!--添加商品类型-->
+    <insert id="insertProductType" parameterType="com.hutao.pojo.ProductType">
+        insert into producttype(id,name) values(#{id},#{name})
+    </insert>
+
+    <!--根据id删商品类型-->
+    <delete id="deleteProductTypeById">
+        delete from producttype where id = #{id}
+    </delete>
+
+    <!--根据id查询商品类型-->
+    <select id="getProductTypeById" resultType="com.hutao.pojo.ProductType">
+        select * from producttype where id = #{id}
+    </select>
+
+    <!--修改商品类型-->
+    <update id="updateProductType" parameterType="com.hutao.pojo.ProductType">
+        update producttype set name = #{name} where id = #{id}
+    </update>
+
+</mapper>
