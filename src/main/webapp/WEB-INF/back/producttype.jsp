@@ -76,7 +76,7 @@
     //删除函数
     function del(id) {
         if (confirm("确定删除吗")) {
-            location.href = "${pageContext.request.contextPath}/productType/delete?id="+id;
+            location.href = "${pageContext.request.contextPath}/productType/delete/"+id;
         }
     }
     //修改函数

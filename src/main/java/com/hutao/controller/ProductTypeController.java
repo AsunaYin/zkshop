@@ -5,6 +5,7 @@ import com.hutao.service.ProductTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -64,8 +65,8 @@ public class ProductTypeController {
 	 * @param id
 	 * @return
 	 */
-	@RequestMapping("/delete")
-	public String deleteProductType(int id){
+	@RequestMapping("/delete/{id}")
+	public String deleteProductType(@PathVariable int id){
 		productTypeService.deleteProductTypeById(id);
 		return "redirect:/productType/toProductTypePage";
 	}
