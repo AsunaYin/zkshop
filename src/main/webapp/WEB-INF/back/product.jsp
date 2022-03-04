@@ -111,13 +111,13 @@
 	</div>
 </body>
 <script type="text/javascript">
-	function pdel(pid) {
+	function pdel(id) {
 		if (confirm("确定删除吗")) {
-			location.href = "${pageContext.request.contextPath}/product/delProduct?pid="+pid;
+			location.href = "${pageContext.request.contextPath}/product/delProduct?id="+id;
 		}
 	}
-	function pmodify(pid) {
-		location.href = "${pageContext.request.contextPath}/product/getProductById?pid="+pid;
+	function pmodify(id) {
+		location.href = "${pageContext.request.contextPath}/product/getProductById?id="+id;
 	}
 </script>
 </html>

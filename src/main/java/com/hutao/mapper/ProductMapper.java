@@ -1,6 +1,7 @@
 package com.hutao.mapper;
 
 import com.hutao.pojo.Product;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -15,4 +16,11 @@ public interface ProductMapper {
 	 * @return
 	 */
 	List<Product> getProductList();
+	
+	/**
+	 * 根据商品id删除商品
+	 * @param id
+	 * @return
+	 */
+	int deleteProductById(@Param("id") Integer id);
 }

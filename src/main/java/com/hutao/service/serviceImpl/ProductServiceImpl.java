@@ -34,4 +34,14 @@ public class ProductServiceImpl implements ProductService {
 		List<Product> productList = productMapper.getProductList();
 		return new PageInfo<Product>(productList);
 	}
+	
+	/**
+	 * 根据商品id删除商品
+	 * @param id
+	 * @return
+	 */
+	@Override
+	public int deleteProductById(Integer id) {
+		return productMapper.deleteProductById(id);
+	}
 }

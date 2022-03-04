@@ -10,4 +10,9 @@
         on p.typeid = pt.id
     </select>
 
+    <!--根据商品 id 删除商品-->
+    <delete id="deleteProductById">
+        delete from product where id = #{id}
+    </delete>
+
 </mapper>

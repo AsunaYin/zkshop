@@ -48,4 +48,10 @@ public class ProductController {
 		return "product";
 	}
 	
+	@RequestMapping("/delProduct")
+	public String deleteProductById(Integer id){
+		productService.deleteProductById(id);
+		return "redirect:/product/getProByPage";
+	}
+	
 }

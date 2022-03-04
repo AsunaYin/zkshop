@@ -17,4 +17,11 @@ public interface ProductService {
 	 * @return
 	 */
 	PageInfo<Product> getProductList(int page, int pageSize);
+	
+	/**
+	 * 根据商品id删除商品
+	 * @param id
+	 * @return
+	 */
+	int deleteProductById(Integer id);
 }
