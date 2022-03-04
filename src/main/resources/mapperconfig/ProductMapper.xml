@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.hutao.mapper.ProductMapper">
+    <!--多表查询，查找商品表中的所有信息并和商品类别表id匹配-->
+    <select id="getProductList" resultType="com.hutao.pojo.Product">
+        select p.*, pt.name AS typename
+        from product p
+        left join producttype pt
+        on p.typeid = pt.id
+    </select>
+
+</mapper>

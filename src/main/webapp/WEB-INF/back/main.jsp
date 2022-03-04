@@ -50,7 +50,7 @@
 							</li>
 						</a>
 
-						<a href="${pageContext.request.contextPath}/product/toProductPage" target="myright">
+						<a href="${pageContext.request.contextPath}/product/getProByPage" target="myright">
 							<li class="two">
 								<span class="glyphicon glyphicon-book" style="color: white;"></span>
 								&nbsp;&nbsp;&nbsp;&nbsp;商品管理&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

@@ -84,9 +84,13 @@
             <artifactId>mybatis</artifactId>
             <version>3.3.0</version>
         </dependency>
+
         <!--后期增加mybatis分页插件 pagehelper-->
-
-
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>4.1.4</version>
+        </dependency>
 
         <!-- Logging  日志框架-->
         <dependency>

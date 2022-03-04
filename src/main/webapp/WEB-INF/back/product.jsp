@@ -12,7 +12,7 @@
         }
         
         function addpro(){
-        	window.location.href="${pageContext.request.contextPath}/addproduct.jsp";//get
+        	window.location.href="${pageContext.request.contextPath}/product/toAddProductPage";//get
         }
     </script>
 <c:remove var="del"></c:remove>
@@ -51,7 +51,7 @@
 						<th>商品类型</th>
 						<th>操作</th>
 					</tr>
-					<c:forEach items="${pb.list}" var="p">
+					<c:forEach items="${productList.list}" var="p">
 						<tr>
 							<td>${p.name}</td>
 							<td>${p.content}</td>
@@ -74,33 +74,33 @@
 				<div class="footNum">
 					<ul>
 						<c:choose>
-							<c:when test="${pb.page eq 1 }">
+							<c:when test="${productList.pageNum eq 1 }">
 								<li class="pre"><a href="javascript:void(0)">上一页</a></li>
 							</c:when>
 							<c:otherwise>
 								<li class="pre"><a
-									href="${pageContext.request.contextPath}/getprobypage?page=${pb.page-1}">
+									href="${pageContext.request.contextPath}/product/getProByPage?page=${productList.pageNum-1}">
 										上一页</a></li>
 							</c:otherwise>
 						</c:choose>
-						<c:forEach begin="1" end="${pb.pages}" step="1" var="index">
+						<c:forEach begin="1" end="${productList.pages}" step="1" var="index">
 							<c:choose>
-								<c:when test="${pb.page eq index}">
+								<c:when test="${productList.pageNum eq index}">
 									<li class="num current"><a href="javascript:void(0)">${index}</a></li>
 								</c:when>
 								<c:otherwise>
 									<li class="num"><a
-										href="${pageContext.request.contextPath}/getprobypage?page=${index}">${index}</a></li>
+										href="${pageContext.request.contextPath}/product/getProByPage?page=${index}">${index}</a></li>
 								</c:otherwise>
 							</c:choose>
 						</c:forEach>
 						<c:choose>
-							<c:when test="${pb.page eq pb.pages}">
+							<c:when test="${productList.pageNum eq productList.pages}">
 								<li class="last"><a href="javascript:void(0)">下一页</a></li>
 							</c:when>
 							<c:otherwise>
 								<li class="last"><a
-									href="${pageContext.request.contextPath}/getprobypage?page=${pb.page+1}">
+									href="${pageContext.request.contextPath}/product/getProByPage?page=${productList.pageNum+1}">
 										下一页</a></li>
 							</c:otherwise>
 						</c:choose>
@@ -113,11 +113,11 @@
 <script type="text/javascript">
 	function pdel(pid) {
 		if (confirm("确定删除吗")) {
-			location.href = "${pageContext.request.contextPath}/delproduct?pid="+pid;
+			location.href = "${pageContext.request.contextPath}/product/delProduct?pid="+pid;
 		}
 	}
 	function pmodify(pid) {
-		location.href = "${pageContext.request.contextPath}/getproductbyid?pid="+pid;
+		location.href = "${pageContext.request.contextPath}/product/getProductById?pid="+pid;
 	}
 </script>
 </html>
