@@ -21,15 +21,6 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	/*
-	//去商品管理页面
-	@RequestMapping("/toProductPage")
-	public String toProductPage(){
-		return "product";
-	}
-	*/
-	
-	
 	/**
 	 * 分页显示数据
 	 * @param page
@@ -48,10 +39,24 @@ public class ProductController {
 		return "product";
 	}
 	
+	/**
+	 * 根据 id 删除商品
+	 * @param id
+	 * @return
+	 */
 	@RequestMapping("/delProduct")
 	public String deleteProductById(Integer id){
 		productService.deleteProductById(id);
 		return "redirect:/product/getProByPage";
+	}
+	
+	/**
+	 * 去商品添加页面
+	 * @return
+	 */
+	@RequestMapping("/toAddProductPage")
+	public String toAddProductPage(){
+		return "/addproduct";
 	}
 	
 }
