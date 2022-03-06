@@ -8,7 +8,7 @@
 <meta charset="UTF-8">
 <script type="text/javascript">
     function addusers(){
-    	window.location.href="${pageContext.request.contextPath}/adduser.jsp";//get
+    	window.location.href="${pageContext.request.contextPath}/users/toAddUserPage";//get
     }
 </script>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css">

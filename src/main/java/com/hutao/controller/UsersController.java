@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -42,6 +43,15 @@ public class UsersController {
 		//清除session
 		session.invalidate();
 		return "login";
+	}
+	
+	/**
+	 * 去添加员工页面
+	 * @return
+	 */
+	@RequestMapping("/toAddUserPage")
+	public String toAddUser(){
+		return "adduser";
 	}
 	
 }
