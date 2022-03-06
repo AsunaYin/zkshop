@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author HUTAO
@@ -20,9 +21,23 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserMapper userMapper;
 	
+	/**
+	 * 用户登录
+	 * @param user
+	 * @return
+	 */
 	@Override
 	public User login(User user) {
 		User u = userMapper.login(user);
 		return u;
+	}
+	
+	/**
+	 * 显示员工列表
+	 * @return
+	 */
+	@Override
+	public List<User> UserList() {
+		return userMapper.UserList();
 	}
 }

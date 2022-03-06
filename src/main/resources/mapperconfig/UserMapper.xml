@@ -4,7 +4,16 @@
 <mapper namespace="com.hutao.mapper.UserMapper" >
     <!--id的值为UserDao接口中的login方法的名称，resultType为login方法的返回类型-->
     <select id="login" resultType="com.hutao.pojo.User">
-        select  * from users where uname = #{user.uname} and upass = #{user.upass}
+        select  *
+        from users
+        where uname = #{user.uname} and upass = #{user.upass}
+    </select>
+
+    <!--显示员工列表-->
+    <select id="UserList" resultType="com.hutao.pojo.User">
+        select u.uname,u.realname,r.rolename
+        from users u,role r
+        where u.roleid = r.id and u.roleid = 9;
     </select>
 
 </mapper>

@@ -4,6 +4,8 @@ import com.hutao.pojo.User;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 /**
  * @author HUTAO
  * @Description
@@ -15,5 +17,6 @@ public interface UserMapper {
 	//@Select("select * from users where uname = #{user.uname} and upass=#{user.upass}")
 	User login(@Param("user") User user);
 	
+	List<User> UserList();
 	
 }

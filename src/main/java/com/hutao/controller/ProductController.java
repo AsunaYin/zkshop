@@ -89,6 +89,13 @@ public class ProductController {
 		return "redirect:/product/getProByPage";
 	}
 	
+	/**
+	 * 上传图片
+	 * @param file
+	 * @param request
+	 * @return
+	 * @throws IOException
+	 */
 	@ResponseBody
 	@RequestMapping(value = "/proUpload",method = RequestMethod.POST)
 	public String uploadProduct(@RequestParam("upimage") MultipartFile file, HttpServletRequest request) throws IOException {

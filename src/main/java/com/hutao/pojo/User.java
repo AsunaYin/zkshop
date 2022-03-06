@@ -13,16 +13,19 @@ public class User {
 	private String upass;
 	private String realname;
 	private Integer roleid;
+	private String rolename;
 	public User() {
 		super();
 	}
-	public User(Integer uid,String uname,String upass,String realname,Integer roleid) {
+	public User(Integer uid,String uname,String upass,String realname,Integer roleid,String rolename) {
 		super();
 		this.uid = uid;
 		this.uname = uname;
 		this.upass = upass;
 		this.realname = realname;
 		this.roleid = roleid;
+		this.rolename = rolename;
+		
 	}
 	public Integer getUid() {
 		return this.uid;
@@ -64,4 +67,11 @@ public class User {
 		this.roleid = roleid;
 	}
 	
+	public String getRolename() {
+		return rolename;
+	}
+	
+	public void setRolename(String rolename) {
+		this.rolename = rolename;
+	}
 }

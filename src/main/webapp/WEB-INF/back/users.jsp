@@ -38,16 +38,16 @@
 					<tr>
 						<th>用户名</th>
 						<th>真实姓名</th>
-						<th>所属部门</th>
+						<%--<th>所属部门</th>--%>
 						<th>角色名称</th>
 						<th>管理操作</th>
 					</tr>
 
-					<c:forEach items="${ub.list}" var="u">
+					<c:forEach items="${userList}" var="u">
 						<tr>
 							<td>${u.uname}</td>
 							<td>${u.realname}</td>
-							<td>${u.udepartment}</td>
+							<%--<td>${u.udepartment}</td>--%>
 							<td>${u.rolename}</td>
 							<td>
 								<button type="button" class="btn btn-info myupdate"

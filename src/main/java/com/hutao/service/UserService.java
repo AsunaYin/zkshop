@@ -3,6 +3,8 @@ package com.hutao.service;
 import com.hutao.pojo.User;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author HUTAO
  * @Description
@@ -13,5 +15,8 @@ public interface UserService {
 	
 	//登录业务方法
 	User login(User user);
+	
+	//显示员工列表
+	List<User> UserList();
 	
 }
