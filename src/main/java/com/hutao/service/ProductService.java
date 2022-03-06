@@ -24,4 +24,11 @@ public interface ProductService {
 	 * @return
 	 */
 	int deleteProductById(Integer id);
+	
+	/**
+	 * 添加商品
+	 * @param product
+	 * @return
+	 */
+	int insertProduct(Product product);
 }

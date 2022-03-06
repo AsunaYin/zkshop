@@ -2,12 +2,24 @@ package com.hutao.controller;
 
 import com.github.pagehelper.PageInfo;
 import com.hutao.pojo.Product;
+import com.hutao.pojo.ProductType;
 import com.hutao.service.ProductService;
+import com.hutao.service.ProductTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
+import java.io.File;
+import java.io.IOException;
+import java.util.Date;
+import java.util.List;
+import java.util.UUID;
 
 /**
  * @author HUTAO
@@ -20,6 +32,10 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService productService;
+	
+	@Autowired
+	private ProductTypeService productTypeService;
+	
 	
 	/**
 	 * 分页显示数据
@@ -55,8 +71,33 @@ public class ProductController {
 	 * @return
 	 */
 	@RequestMapping("/toAddProductPage")
-	public String toAddProductPage(){
+	public String toAddProductPage(Model model){
+		List<ProductType> proTypeList = productTypeService.getProductType();
+		model.addAttribute("proTypeList",proTypeList);
 		return "/addproduct";
+	}
+	
+	/**
+	 * 添加商品
+	 * @param product
+	 * @return
+	 */
+	@RequestMapping(value = "/addProduct",method = RequestMethod.POST)
+	public String addProduct(Product product){
+		product.setDate(new Date());
+		productService.insertProduct(product);
+		return "redirect:/product/getProByPage";
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/proUpload",method = RequestMethod.POST)
+	public String uploadProduct(@RequestParam("upimage") MultipartFile file, HttpServletRequest request) throws IOException {
+		System.out.println("-------");
+		String path = request.getServletContext().getRealPath("/resources/image_big/");
+		String originalFilename = file.getOriginalFilename();
+		String fileName = UUID.randomUUID().toString().replaceAll("-", "") + originalFilename;
+		file.transferTo(new File(path, fileName));
+		return fileName;
 	}
 	
 }

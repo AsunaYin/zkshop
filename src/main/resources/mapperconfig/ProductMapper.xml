@@ -15,4 +15,9 @@
         delete from product where id = #{id}
     </delete>
 
+    <insert id="insertProduct" parameterType="com.hutao.pojo.Product">
+        insert into product(name, content, price, image, number, typeid, date)
+        values (#{name},#{content},#{price},#{image},#{number},#{typeid},#{date})
+    </insert>
+
 </mapper>

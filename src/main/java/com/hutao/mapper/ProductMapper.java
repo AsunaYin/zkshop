@@ -23,4 +23,14 @@ public interface ProductMapper {
 	 * @return
 	 */
 	int deleteProductById(@Param("id") Integer id);
+	
+	
+	
+	/**
+	 * 添加商品
+	 * @param product
+	 * @return
+	 */
+	int insertProduct(Product product);
+	
 }

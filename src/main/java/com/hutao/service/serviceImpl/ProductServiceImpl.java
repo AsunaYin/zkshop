@@ -44,4 +44,14 @@ public class ProductServiceImpl implements ProductService {
 	public int deleteProductById(Integer id) {
 		return productMapper.deleteProductById(id);
 	}
+	
+	/**
+	 * 添加商品
+	 * @param product
+	 * @return
+	 */
+	@Override
+	public int insertProduct(Product product) {
+		return productMapper.insertProduct(product);
+	}
 }
