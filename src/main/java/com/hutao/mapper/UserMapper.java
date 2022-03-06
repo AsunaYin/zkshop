@@ -14,9 +14,25 @@ import java.util.List;
 
 public interface UserMapper {
 	
+	/**
+	 * 登录
+	 * @param user
+	 * @return
+	 */
 	//@Select("select * from users where uname = #{user.uname} and upass=#{user.upass}")
 	User login(@Param("user") User user);
 	
-	List<User> UserList();
+	/**
+	 * 显示员工列表
+	 * @return
+	 */
+	List<User> getUserList();
+	
+	/**
+	 * 根据id删除员工
+	 * @param id
+	 * @return
+	 */
+	int deleteUserById(Integer id);
 	
 }

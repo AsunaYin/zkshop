@@ -17,6 +17,9 @@ public interface UserService {
 	User login(User user);
 	
 	//显示员工列表
-	List<User> UserList();
+	List<User> getUserList();
+	
+	//根据id删除员工
+	int deleteUserById(Integer id);
 	
 }

@@ -37,7 +37,17 @@ public class UserServiceImpl implements UserService {
 	 * @return
 	 */
 	@Override
-	public List<User> UserList() {
-		return userMapper.UserList();
+	public List<User> getUserList() {
+		return userMapper.getUserList();
+	}
+	
+	
+	/**
+	 * 根据id删除员工
+	 * @return
+	 */
+	@Override
+	public int deleteUserById(Integer id) {
+		return userMapper.deleteUserById(id);
 	}
 }

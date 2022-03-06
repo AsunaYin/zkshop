@@ -66,11 +66,11 @@
 <script type="text/javascript">
     function udel(uid) {
         if (confirm("确定删除吗")) {
-            location.href = "${pageContext.request.contextPath}/deluser?uid="+uid;
+            location.href = "${pageContext.request.contextPath}/users/deleteUserById?uid="+uid;
         }
     }
     function umodify(uid) {
-        location.href = "${pageContext.request.contextPath}/getuserbyid?uid="+uid;
+        location.href = "${pageContext.request.contextPath}/users/toUpdateUserPage?uid="+uid;
     }
 </script>
 

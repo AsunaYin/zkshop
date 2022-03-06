@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
@@ -24,12 +25,12 @@ public class UsersController {
 	private UserService userService;
 	
 	/**
-	 * 进入用户管理页面
+	 * 进入员工管理页面
 	 * @return
 	 */
 	@RequestMapping("/toUsersPage")
 	public String toUsersPage(Model model){
-		List<User> userList = userService.UserList();
+		List<User> userList = userService.getUserList();
 		model.addAttribute("userList",userList);
 		return "users";
 	}
@@ -52,6 +53,32 @@ public class UsersController {
 	@RequestMapping("/toAddUserPage")
 	public String toAddUser(){
 		return "adduser";
+	}
+	
+	/**
+	 * 添加员工功能
+	 * @return
+	 */
+	
+	
+	/**
+	 * 去修改员工信息页面
+	 * @return
+	 */
+	@RequestMapping("/toUpdateUserPage")
+	public String toUpdateUser(){
+		return "updateuser";
+	}
+	
+	/**
+	 * 根据id删除员工
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping("/deleteUserById")
+	public String deleteUser(@RequestParam("uid") Integer id){
+		userService.deleteUserById(id);
+		return "redirect:/users/toUsersPage";
 	}
 	
 }
