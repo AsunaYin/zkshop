@@ -11,7 +11,7 @@
 
     <!--显示员工列表-->
     <select id="UserList" resultType="com.hutao.pojo.User">
-        select u.uname,u.realname,r.rolename
+        select u.*,r.rolename
         from users u,role r
         where u.roleid = r.id and u.roleid = 9;
     </select>
