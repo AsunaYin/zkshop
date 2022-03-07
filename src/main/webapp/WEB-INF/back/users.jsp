@@ -11,7 +11,7 @@
     	window.location.href="${pageContext.request.contextPath}/users/toAddUserPage";//get
     }
 </script>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css">
+<link rel=6"stylesheet" href="${pageContext.request.contextPath}/resources/css/reset.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/base.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/list.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/css/bootstrap.css" />

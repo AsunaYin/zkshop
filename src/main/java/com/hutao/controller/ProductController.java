@@ -89,22 +89,4 @@ public class ProductController {
 		return "redirect:/product/getProByPage";
 	}
 	
-	/**
-	 * 上传图片
-	 * @param file
-	 * @param request
-	 * @return
-	 * @throws IOException
-	 */
-	@ResponseBody
-	@RequestMapping(value = "/proUpload",method = RequestMethod.POST)
-	public String uploadProduct(@RequestParam("upimage") MultipartFile file, HttpServletRequest request) throws IOException {
-		System.out.println("-------");
-		String path = request.getServletContext().getRealPath("/resources/image_big/");
-		String originalFilename = file.getOriginalFilename();
-		String fileName = UUID.randomUUID().toString().replaceAll("-", "") + originalFilename;
-		file.transferTo(new File(path, fileName));
-		return fileName;
-	}
-	
 }
