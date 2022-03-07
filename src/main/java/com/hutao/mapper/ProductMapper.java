@@ -24,13 +24,20 @@ public interface ProductMapper {
 	 */
 	int deleteProductById(@Param("id") Integer id);
 	
-	
-	
 	/**
 	 * 添加商品
 	 * @param product
 	 * @return
 	 */
 	int insertProduct(Product product);
+	
+	/**
+	 * 根据id查找商品
+	 * @param id
+	 * @return
+	 */
+	Product getProductById(@Param("id") Integer id);
+	
+	int updateProduct(Product product);
 	
 }

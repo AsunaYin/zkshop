@@ -89,4 +89,30 @@ public class ProductController {
 		return "redirect:/product/getProByPage";
 	}
 	
+	/**
+	 * 去修改商品页面
+	 * @param id
+	 * @param model
+	 * @return
+	 */
+	@RequestMapping("/toUpdatePro")
+	public String getProdutById(Integer id,Model model){
+		Product product = productService.getProductById(id);
+		List<ProductType> proTypeList = productTypeService.getProductType();
+		model.addAttribute("proTypeList",proTypeList);
+		model.addAttribute("prod",product);
+		return "updateproduct";
+	}
+	
+	/**
+	 * 修改商品
+	 * @param product
+	 * @return
+	 */
+	@RequestMapping(value = "/updateProduct", method = RequestMethod.POST)
+	public String updateProduct(Product product){
+		product.setDate(new Date());
+		productService.updateProduct(product);
+		return "redirect:/product/getProByPage";
+	}
 }

@@ -31,4 +31,18 @@ public interface ProductService {
 	 * @return
 	 */
 	int insertProduct(Product product);
+	
+	/**
+	 * 根据id获取商品
+	 * @param id
+	 * @return
+	 */
+	Product getProductById(Integer id);
+	
+	/**
+	 * 修改商品
+	 * @param product
+	 * @return
+	 */
+	int updateProduct(Product product);
 }

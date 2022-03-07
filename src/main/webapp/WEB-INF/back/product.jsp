@@ -117,7 +117,7 @@
 		}
 	}
 	function pmodify(id) {
-		location.href = "${pageContext.request.contextPath}/product/getProductById?id="+id;
+		location.href = "${pageContext.request.contextPath}/product/toUpdatePro?id="+id;
 	}
 </script>
 </html>

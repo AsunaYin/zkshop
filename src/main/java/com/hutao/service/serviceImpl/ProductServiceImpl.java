@@ -54,4 +54,24 @@ public class ProductServiceImpl implements ProductService {
 	public int insertProduct(Product product) {
 		return productMapper.insertProduct(product);
 	}
+	
+	/**
+	 *根据id获取商品
+	 * @param id
+	 * @return
+	 */
+	@Override
+	public Product getProductById(Integer id) {
+		return productMapper.getProductById(id);
+	}
+	
+	/**
+	 * 修改商品
+	 * @param product
+	 * @return
+	 */
+	@Override
+	public int updateProduct(Product product) {
+		return productMapper.updateProduct(product);
+	}
 }
