@@ -40,5 +40,14 @@ public class LoginController {
 		return "login";
 	}
 	
+	/**
+	 * 进入登录页面
+	 * @return
+	 */
+	@RequestMapping("/login")
+	public String loginPage(){
+		return "login";
+	}
+	
 	
 }
